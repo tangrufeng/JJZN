@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file('/Users/Tom/WifiBox/JJZN/app/debug.keystore')
+            storePassword 'android'
+        }
+    }
+    compileSdkVersion 19
+    buildToolsVersion '21.1.2'
+    defaultConfig {
+        applicationId "com.jjzn.wifibox.xmly"
+        minSdkVersion 12
+        targetSdkVersion 18
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:23.4.0'
+    compile files('libs/boas-sdk-v0.1.0.jar')
+    compile files('libs/universal-image-loader-1.9.4.jar')
+    compile files('libs/user_profile_mtj_1.4.jar')
+}
